@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "id_name": "POT",
+      "requirements": [
+        {
+          "id_number": 1,
+          "body": {
+            "text": "ユーザーが安全にお湯を使用できる"
+          },
+          "reason": "火を使わず安全にお湯を得る必要があるから",
+          "description": "本体が電気ポットであるため、加熱・保温・給湯の全体要求を統括する",
+          "children": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "お湯を沸かす"
+              },
+              "reason": "水を加熱して沸騰させることで飲用や調理に使えるから",
+              "description": "最大1.5リットルまで加熱",
+              "children": [],
+              "specifications": [
+                {
+                  "id_number": 1,
+                  "body": {
+                    "text": "設定された温度になるまでヒーターを加熱する",
+                    "figures": [
+                      {
+                        "type": "mermaid",
+                        "src": "sequenceDiagram\nUser->>Pot: 水を注ぐ\nPot->>Heater: 加熱開始\nHeater-->>Pot: 湯温を通知\nPot-->>User: 沸騰完了表示"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id_number": 2,
+                  "body": {
+                    "text": "水量が安全範囲内かをセンサで確認する"
+                  }
+                }
+              ]
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "お湯を保温する"
+              },
+              "reason": "温度が低下すると使いにくくなるから",
+              "description": "70°C〜90°Cの範囲で保温可能",
+              "children": [],
+              "specifications": [
+                {
+                  "id_number": 1,
+                  "body": {
+                    "text": "設定温度より下がったらヒーターを再加熱する"
+                  }
+                },
+                {
+                  "id_number": 2,
+                  "body": {
+                    "text": "保温温度と経過時間を表示する",
+                    "tables": [
+                      {
+                        "caption": "保温設定と動作表",
+                        "header": ["温度", "維持時間", "再加熱間隔"],
+                        "rows": [
+                          ["70°C", "6時間", "30分"],
+                          ["80°C", "4時間", "20分"],
+                          ["90°C", "2時間", "10分"]
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id_number": 3,
+              "body": {
+                "text": "お湯を給湯する"
+              },
+              "reason": "カップラーメンや飲料にすぐ使用できるようにするため",
+              "description": "電動ポンプ式給湯",
+              "children": [],
+              "specifications": [
+                {
+                  "id_number": 1,
+                  "body": {
+                    "text": "ボタンを押すと一定量の湯を出す"
+                  }
+                },
+                {
+                  "id_number": 2,
+                  "body": {
+                    "text": "給湯中はLEDで給湯中を表示する"
+                  }
+                }
+              ]
+            }
+          ],
+          "specifications": []
+        }
+      ]
+    }
+  ]
+}

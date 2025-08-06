@@ -1,0 +1,68 @@
+body {
+  font-family: sans-serif;
+  margin: 2em;
+  line-height: 1.6;
+}
+.req-id {
+  background-color: #eef;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.reason, .description {
+  margin-left: 1em;
+  color: #666;
+}
+.spec-group ul {
+  margin-left: 2em;
+}
+.usdm-table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+.usdm-table th,
+.usdm-table td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  text-align: center;
+}
+.table-caption {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+.usdm-entry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+  border-left: 2px solid #ddd;
+  padding-left: 0.5em;
+}
+
+.usdm-id {
+  width: 8em;
+  font-weight: bold;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.usdm-content {
+  flex-grow: 1;
+}
+
+.usdm-title {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.usdm-reason, .usdm-description {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+}
+
+/* インデントの深さごとに左マージン */
+.depth-1 { margin-left: 0em; }
+.depth-2 { margin-left: 1.5em; }
+.depth-3 { margin-left: 3em; }
+.depth-4 { margin-left: 4.5em; }

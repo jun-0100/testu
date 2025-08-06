@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+  padding: 2em;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.2em;
+}
+
+.usdm-entry {
+  display: flex;
+  margin-bottom: 1em;
+  border-left: 3px solid #ddd;
+  padding-left: 0.5em;
+}
+
+.usdm-id {
+  width: 8em;
+  font-weight: bold;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.usdm-content {
+  flex-grow: 1;
+}
+
+.usdm-title {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.usdm-reason, .usdm-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0.3em;
+}
+
+.depth-1 { margin-left: 0em; }
+.depth-2 { margin-left: 1.5em; }
+.depth-3 { margin-left: 3em; }
+.depth-4 { margin-left: 4.5em; }
+
+.usdm-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.usdm-table th, .usdm-table td {
+  border: 1px solid #aaa;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.table-caption {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}

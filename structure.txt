@@ -1,0 +1,9 @@
+document = {category}
+category = id_name, {requirement}
+requirement = id_number, body, reason, [description], ({requirement} | {specification})
+specification = id_number, body
+body = String, [{figure}], [{table}]
+reason = String
+description = String
+id_name = String
+id_number= Integer

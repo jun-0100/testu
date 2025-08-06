@@ -1,0 +1,243 @@
+{
+  "categories": [
+    {
+      "id_name": "SpaceWireRMAPLibrary",
+      "requirements": [
+        {
+          "id_number": 1,
+          "body": {
+            "text": "TCP 接続を確立する"
+          },
+          "reason": "仮想または物理 SpaceWire デバイスへの通信路を開設するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "再試行する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "エラー状態を通知する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 2,
+          "body": {
+            "text": "バイト列を送信する"
+          },
+          "reason": "SpaceWire パケットをリンク層経由で送出するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "ロギングする"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "リトライする"
+              }
+            },
+            {
+              "id_number": 3,
+              "body": {
+                "text": "例外を通知する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 3,
+          "body": {
+            "text": "データを受信する"
+          },
+          "reason": "返信パケットや応答データを受け取るため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "タイムアウト例外を返す"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "バッファをクリアする"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 4,
+          "body": {
+            "text": "ソケットを閉じる"
+          },
+          "reason": "通信終了時にリソースを破棄するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "リソースを解放する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "多重呼び出しに耐える"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 5,
+          "body": {
+            "text": "Read コマンドパケットを構築する"
+          },
+          "reason": "RMAP Read 操作を正しく送信するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "ヘッダー CRC エラーを検出する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "無効コマンドを識別する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 6,
+          "body": {
+            "text": "Write コマンドパケットを構築する"
+          },
+          "reason": "RMAP Write 操作を正しく処理するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "データ CRC を検査する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "長さ不一致を検出する"
+              }
+            },
+            {
+              "id_number": 3,
+              "body": {
+                "text": "EEP または early EOP を検知する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 7,
+          "body": {
+            "text": "RMW 操作を行う"
+          },
+          "reason": "Read‑Modify‑Write 操作を正しく実施するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "mask を適用する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "バッファオーバーランを検出する"
+              }
+            },
+            {
+              "id_number": 3,
+              "body": {
+                "text": "Data CRC エラーを検知する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 8,
+          "body": {
+            "text": "パケットを解析する"
+          },
+          "reason": "Target 側で受信したパケットの内容を判断するため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "未使用パケットタイプを破棄する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "無効命令コードを破棄する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 9,
+          "body": {
+            "text": "callback を呼び出す"
+          },
+          "reason": "ユーザ指定のメモリアクセス処理を挟むため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "access 拒否時にエラー応答を生成する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "正常時に status=0x00 応答を生成する"
+              }
+            }
+          ]
+        },
+        {
+          "id_number": 10,
+          "body": {
+            "text": "CRC を計算する"
+          },
+          "reason": "リンク層および RMAP 層の整合性をチェックするため",
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "ヘッダー CRC を検査する"
+              }
+            },
+            {
+              "id_number": 2,
+              "body": {
+                "text": "データ CRC を検査する"
+              }
+            },
+            {
+              "id_number": 3,
+              "body": {
+                "text": "EEP や early EOP を検出する"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

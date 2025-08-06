@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "id_name": "SYS",
+      "requirements": [
+        {
+          "id_number": 1,
+          "body": {
+            "text": "システム構成を可視化する",
+            "figures": [
+              {
+                "type": "mermaid",
+                "src": "graph TD\n  A[Client] --> B[API Server]\n  B --> C[Database]",
+                "caption": "システム構成図"
+              }
+            ]
+          },
+          "reason": "アーキテクチャの共通理解を得るため",
+          "description": "初期設計段階で全体像を示す",
+          "children": [],
+          "specifications": [
+            {
+              "id_number": 1,
+              "body": {
+                "text": "システム構成をMermaidで表現する"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

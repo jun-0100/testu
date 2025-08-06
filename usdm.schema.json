@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/usdm.schema.json",
+  "title": "USDM Document",
+  "type": "object",
+  "properties": {
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/category"
+      }
+    }
+  },
+  "required": ["categories"],
+  "$defs": {
+    "category": {
+      "type": "object",
+      "properties": {
+        "id_name": {
+          "type": "string"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/requirement"
+          }
+        }
+      },
+      "required": ["id_name", "requirements"]
+    },
+    "requirement": {
+      "type": "object",
+      "properties": {
+        "id_number": {
+          "type": "integer"
+        },
+        "body": {
+          "$ref": "#/$defs/body"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/requirement"
+          }
+        },
+        "specifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/specification"
+          }
+        }
+      },
+      "required": ["id_number", "body"],
+      "allOf": [
+        {
+          "not": {
+            "required": ["children", "specifications"]
+          }
+        }
+      ]
+    },
+    "specification": {
+      "type": "object",
+      "properties": {
+        "id_number": {
+          "type": "integer"
+        },
+        "body": {
+          "$ref": "#/$defs/body"
+        }
+      },
+      "required": ["id_number", "body"]
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "figures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/figure"
+          }
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/table"
+          }
+        }
+      },
+      "required": ["text"]
+    },
+    "figure": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["mermaid", "plantuml"]
+        },
+        "src": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "src"]
+    },
+    "table": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "caption": {
+          "type": "string"
+        }
+      },
+      "required": ["header", "rows"]
+    }
+  }
+}
